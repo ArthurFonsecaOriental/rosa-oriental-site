@@ -498,99 +498,75 @@ function App() {
   </div>
 </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-pink-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Pronta para Transformar sua Pele?
-          </h2>
-          <p className="text-xl mb-8">
-            Junte-se a mais de 50.000 mulheres que já descobriram o segredo para uma pele jovem e radiante com Rosa Oriental
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#kits">
-              <button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4">
-                <Heart className="w-5 h-5 mr-2" />
-                Escolher Meu Kit
-              </button>
-            </a>
-            <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-              <button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Falar no WhatsApp
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* CTA Section */}
+<section className="py-16 bg-pink-600 text-white">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      Pronta para Transformar sua Pele?
+    </h2>
+    <p className="text-xl mb-8">
+      Junte-se a mais de 50.000 mulheres que já descobriram o segredo para uma pele jovem e radiante com Rosa Oriental
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#kits">
+        <button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4 rounded-md flex items-center font-semibold">
+          <Heart className="w-5 h-5 mr-2" />
+          Escolher Meu Kit
+        </button>
+      </a>
+      <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
+        <button size="lg" variant="outline" className="border-white border-2 text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-md flex items-center font-semibold">
+          <MessageCircle className="w-5 h-5 mr-2" />
+          Falar no WhatsApp
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto mb-4 filter brightness-0 invert" />
-              <p className="text-gray-400 mb-4">
-                Rejuvenesça sua pele de dentro para fora com a fórmula exclusiva Rosa Oriental.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Links Rápidos</h3>
-              <div className="space-y-2">
-                <a href="#beneficios" className="block text-gray-400 hover:text-white transition-colors">Benefícios</a>
-                <a href="#composicao" className="block text-gray-400 hover:text-white transition-colors">Composição</a>
-                <a href="#depoimentos" className="block text-gray-400 hover:text-white transition-colors">Depoimentos</a>
-                <a href="#kits" className="block text-gray-400 hover:text-white transition-colors">Kits</a>
-                <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
-                <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
-                  <Package className="w-4 h-4 mr-2" />
-                  Rastrear Pedido
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Contato</h3>
-              <div className="space-y-2 text-gray-400">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (14) 98126-2330
-                </div>
-                <div className="flex items-center">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Rosa Oriental. Todos os direitos reservados.</p>
-            <p className="mt-2 text-sm">
-              Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de usar.
-            </p>
-          </div>
+<footer className="bg-gray-900 text-white py-12">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-3 gap-8">
+      <div>
+        <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto mb-4 filter brightness-0 invert" />
+        <p className="text-gray-400 mb-4">
+          Rejuvenesça sua pele de dentro para fora com a fórmula exclusiva Rosa Oriental.
+        </p>
+      </div>
+      
+      <div>
+        <h3 className="font-semibold mb-4">Links Rápidos</h3>
+        <div className="space-y-2">
+          <a href="#beneficios" className="block text-gray-400 hover:text-white transition-colors">Benefícios</a>
+          <a href="#composicao" className="block text-gray-400 hover:text-white transition-colors">Composição</a>
+          <a href="#depoimentos" className="block text-gray-400 hover:text-white transition-colors">Depoimentos</a>
+          <a href="#kits" className="block text-gray-400 hover:text-white transition-colors">Kits</a>
+          <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
+          <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
+            <Package className="w-4 h-4 mr-2" />
+            Rastrear Pedido
+          </a>
         </div>
-      </footer>
-
-      <style jsx>{`
-        @keyframes floating {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        
-        .floating-animation {
-          animation: floating 3s ease-in-out infinite;
-        }
-      `}</style>
+      </div>
+      
+      <div>
+        <h3 className="font-semibold mb-4">Contato</h3>
+        <div className="space-y-2 text-gray-400">
+          <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
+            <MessageCircle className="w-4 h-4 mr-2" />
+            WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-  )
-}
-
-export default App
+    
+    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2024 Rosa Oriental. Todos os direitos reservados.</p>
+      <p className="mt-2 text-sm">
+        Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de usar.
+      </p>
+    </div>
+  </div>
+</footer>
 
