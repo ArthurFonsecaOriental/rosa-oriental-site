@@ -263,7 +263,7 @@ function App() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow">
                 <div className="pt-6">
                   <div className="flex justify-center mb-4">
                     {benefit.icon}
