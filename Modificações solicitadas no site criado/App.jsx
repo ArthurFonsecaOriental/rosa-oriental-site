@@ -462,41 +462,41 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-pink-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Perguntas <span className="text-pink-600">Frequentes</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              Tire todas suas dúvidas sobre o Rosa Oriental
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full p-6 text-left hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex justify-between items-center">
-                    <h3 className="font-semibold text-lg">{item.question}</h3>
-                    <div className={`transform transition-transform ${openFaq === index ? 'rotate-45' : ''}`}>
-                      +
-                    </div>
-                  </div>
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600">{item.answer}</p>
-                  </div>
-                )}
+<section id="faq" className="py-16 bg-pink-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Perguntas <span className="text-pink-600">Frequentes</span>
+      </h2>
+      <p className="text-lg text-gray-600">
+        Tire todas suas dúvidas sobre o Rosa Oriental
+      </p>
+    </div>
+    
+    <div className="max-w-3xl mx-auto space-y-4">
+      {faqItems.map((item, index) => (
+        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <button
+            onClick={() => setOpenFaq(openFaq === index ? null : index)}
+            className="w-full p-6 text-left hover:bg-gray-50 transition-colors"
+          >
+            <div className="flex justify-between items-center">
+              <h3 className="font-semibold text-lg">{item.question}</h3>
+              <div className={`transform transition-transform text-2xl font-light ${openFaq === index ? 'rotate-45' : ''}`}>
+                +
               </div>
-            ))}
-          </div>
+            </div>
+          </button>
+          {openFaq === index && (
+            <div className="px-6 pb-6">
+              <p className="text-gray-600 whitespace-pre-line">{item.answer}</p>
+            </div>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-16 bg-pink-600 text-white">
