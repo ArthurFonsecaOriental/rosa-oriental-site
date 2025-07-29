@@ -166,37 +166,36 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto" />
-            </div>
-            <nav className="hidden md:flex space-x-6">
-              <a href="#beneficios" className="text-gray-600 hover:text-pink-600 transition-colors">Benefícios</a>
-              <a href="#composicao" className="text-gray-600 hover:text-pink-600 transition-colors">Composição</a>
-              <a href="#depoimentos" className="text-gray-600 hover:text-pink-600 transition-colors">Depoimentos</a>
-              <a href="#kits" className="text-gray-600 hover:text-pink-600 transition-colors">Kits</a>
-              <a href="#faq" className="text-gray-600 hover:text-pink-600 transition-colors">FAQ</a>
-            </nav>
-            <div className="flex space-x-3">
-              <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-                <button className="bg-pink-600 hover:bg-pink-700">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
-                </button>
-              </a>
-              <a href="#kits">
-                <button className="bg-green-600 hover:bg-green-700">
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Comprar
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
-
+<header className="bg-white shadow-sm sticky top-0 z-50">
+  <div className="container mx-auto px-4 py-4">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center">
+        <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto" />
+      </div>
+      <nav className="hidden md:flex space-x-6">
+        <a href="#beneficios" className="text-gray-600 hover:text-pink-600 transition-colors">Benefícios</a>
+        <a href="#composicao" className="text-gray-600 hover:text-pink-600 transition-colors">Composição</a>
+        <a href="#depoimentos" className="text-gray-600 hover:text-pink-600 transition-colors">Depoimentos</a>
+        <a href="#kits" className="text-gray-600 hover:text-pink-600 transition-colors">Kits</a>
+        <a href="#faq" className="text-gray-600 hover:text-pink-600 transition-colors">FAQ</a>
+      </nav>
+      <div className="flex space-x-3">
+        <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
+          <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
+            <MessageCircle className="w-4 h-4 mr-2" />
+            WhatsApp
+          </button>
+        </a>
+        <a href="#kits">
+          <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
+            <ShoppingCart className="w-4 h-4 mr-2" />
+            Comprar
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 relative overflow-hidden">
         <div className="grid md:grid-cols-2 gap-12 items-center">
