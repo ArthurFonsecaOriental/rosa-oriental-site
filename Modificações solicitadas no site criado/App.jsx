@@ -11,19 +11,25 @@ function App() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = [
-    {
-      name: "Carla Mendes",
-      age: 45,
-      text: "Depois dos 40, achei que não tinha mais jeito. O Rosa Oriental me provou o contrário!",
-      image: carlaMendesImg
-    },
-    {
-      name: "Maria Silva",
-      age: 42, 
-      text: "Em apenas 3 semanas já notei minha pele mais firme e hidratada. O Rosa Oriental realmente funciona!",
-      image: mariaSilvaImg
-    }
-  ];
+  {
+    name: "Carla Mendes",
+    age: 45,
+    text: "Depois dos 40, achei que não tinha mais jeito. O Rosa Oriental me provou o contrário!",
+    image: carlaMendesImg
+  },
+  {
+    name: "Ana Costa", 
+    age: 38,
+    text: "Nunca pensei que uma cápsula pudesse fazer tanta diferença. Minha pele está radiante!",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Maria Silva",
+    age: 42, 
+    text: "Em apenas 3 semanas já notei minha pele mais firme e hidratada. O Rosa Oriental realmente funciona!",
+    image: mariaSilvaImg
+  }
+];
 
   const benefits = [
     {
