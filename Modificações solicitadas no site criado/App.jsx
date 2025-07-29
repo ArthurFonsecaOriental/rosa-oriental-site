@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react'
-import './App.css'
-import produtoImg from './image.png'
-import mariaSilvaImg from './maria-silva.png'
-import carlaMendesImg from './carla-mendes.png'
-import logoImg from './RosaOriental-Logotipo.png'
-import garantiaImg from './garantia-produtos.png'
+import { useState } from 'react';
+import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react';
+import './App.css';
+import produtoImg from './image.png';
+import mariaSilvaImg from './maria-silva.png';
+import carlaMendesImg from './carla-mendes.png';
+import logoImg from './RosaOriental-Logotipo.png';
+import garantiaImg from './garantia-produtos.png';
 
 function App() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0)
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = [
     {
@@ -18,18 +18,12 @@ function App() {
       image: carlaMendesImg
     },
     {
-      name: "Ana Costa", 
-      age: 38,
-      text: "Nunca pensei que uma cápsula pudesse fazer tanta diferença. Minha pele está radiante!",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-    },
-    {
       name: "Maria Silva",
       age: 42, 
       text: "Em apenas 3 semanas já notei minha pele mais firme e hidratada. O Rosa Oriental realmente funciona!",
       image: mariaSilvaImg
     }
-  ]
+  ];
 
   const benefits = [
     {
@@ -62,7 +56,7 @@ function App() {
       title: "Aprovado por Milhares",
       description: "Mais de 50.000 mulheres já transformaram sua pele"
     }
-  ]
+  ];
 
   const plans = [
     {
@@ -120,7 +114,7 @@ function App() {
       bestValue: true,
       link: "https://seguro.payt.com.br/a/nVoQbDkVIZOp4ebq"
     }
-  ]
+  ];
 
   const faqItems = [
     {
@@ -159,43 +153,44 @@ function App() {
       question: "COMO RASTREAR O PEDIDO?",
       answer: "Para acompanhar o seu envio clique aqui (coloque o número da sua transação que os dados serão impressos). Após a compra, o prazo para que seus dados estejam no sistema, é de até 72 horas. Caso não consiga depois desse período, entre em contato conosco."
     }
-  ]
+  ];
 
-  const [openFaq, setOpenFaq] = useState(null)
+  const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
       {/* Header */}
-<header className="bg-white shadow-sm sticky top-0 z-50">
-  <div className="container mx-auto px-4 py-4">
-    <div className="flex items-center justify-between">
-      <div className="flex items-center">
-        <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto" />
-      </div>
-      <nav className="hidden md:flex space-x-6">
-        <a href="#beneficios" className="text-gray-600 hover:text-pink-600 transition-colors">Benefícios</a>
-        <a href="#composicao" className="text-gray-600 hover:text-pink-600 transition-colors">Composição</a>
-        <a href="#depoimentos" className="text-gray-600 hover:text-pink-600 transition-colors">Depoimentos</a>
-        <a href="#kits" className="text-gray-600 hover:text-pink-600 transition-colors">Kits</a>
-        <a href="#faq" className="text-gray-600 hover:text-pink-600 transition-colors">FAQ</a>
-      </nav>
-      <div className="flex space-x-3">
-        <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-          <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            WhatsApp
-          </button>
-        </a>
-        <a href="#kits">
-          <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Comprar
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto" />
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              <a href="#beneficios" className="text-gray-600 hover:text-pink-600 transition-colors">Benefícios</a>
+              <a href="#composicao" className="text-gray-600 hover:text-pink-600 transition-colors">Composição</a>
+              <a href="#depoimentos" className="text-gray-600 hover:text-pink-600 transition-colors">Depoimentos</a>
+              <a href="#kits" className="text-gray-600 hover:text-pink-600 transition-colors">Kits</a>
+              <a href="#faq" className="text-gray-600 hover:text-pink-600 transition-colors">FAQ</a>
+            </nav>
+            <div className="flex space-x-3">
+              <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
+                <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp
+                </button>
+              </a>
+              <a href="#kits">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md flex items-center">
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Comprar
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 relative overflow-hidden">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -205,7 +200,7 @@ function App() {
             </div>
           </div>
           <div>
-            <span className="mb-4 bg-pink-100 text-pink-600 border-pink-200">
+            <span className="mb-4 inline-flex items-center bg-pink-100 text-pink-600 border-pink-200 px-2.5 py-0.5 rounded-full text-sm font-medium">
               <Star className="w-4 h-4 mr-1" />
               Aprovado pela ANVISA
             </span>
@@ -220,13 +215,13 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#kits">
-                <button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4">
+                <button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-md flex items-center font-semibold text-lg">
                   <Heart className="w-5 h-5 mr-2" />
                   Quero Rejuvenescer
                 </button>
               </a>
               <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-                <button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4">
+                <button size="lg" variant="outline" className="border-orange-500 border-2 text-orange-500 hover:bg-orange-50 px-8 py-4 rounded-md flex items-center font-semibold text-lg">
                   <Phone className="w-5 h-5 mr-2" />
                   Falar no WhatsApp
                 </button>
@@ -287,7 +282,6 @@ function App() {
             <p className="text-lg text-gray-600 mb-12">
               Combinação única de ingredientes premium que trabalham em sinergia para rejuvenescer sua pele de dentro para fora.
             </p>
-            
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -297,7 +291,6 @@ function App() {
                     <p className="text-gray-600">Recupera firmeza e elasticidade com alta absorção</p>
                   </div>
                 </div>
-                
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
@@ -306,7 +299,6 @@ function App() {
                   </div>
                 </div>
               </div>
-              
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
@@ -315,7 +307,6 @@ function App() {
                     <p className="text-gray-600">Hidratação intensa e preenchimento de linhas finas</p>
                   </div>
                 </div>
-                
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
@@ -340,10 +331,9 @@ function App() {
               Mais de 50.000 mulheres já transformaram sua pele com Rosa Oriental
             </p>
           </div>
-          
           <div className="max-w-2xl mx-auto">
-            <div className="p-8 text-center">
-              <div>
+            <div className="bg-white rounded-lg p-8 text-center shadow-md">
+              <div className="pt-6">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
@@ -365,7 +355,6 @@ function App() {
                 </div>
               </div>
             </div>
-            
             <div className="flex justify-center mt-6 space-x-2">
               {testimonials.map((_, index) => (
                 <button
@@ -426,22 +415,21 @@ function App() {
               Kits especiais com descontos exclusivos para você começar sua transformação hoje mesmo
             </p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {plans.map((plan, index) => (
               <div key={index} className={`relative bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>
                 {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white">
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
                     Mais Popular
                   </span>
                 )}
                 {plan.bestValue && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white">
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
                     Melhor Custo Benefício
                   </span>
                 )}
-                <div className="p-6 text-center">
-                  <span className="mb-4 bg-green-100 text-green-600">{plan.discount}</span>
+                <div className="pt-6">
+                  <span className="mb-4 inline-block bg-green-100 text-green-600 text-sm font-semibold px-2.5 py-0.5 rounded-full">{plan.discount}</span>
                   <h3 className="text-xl font-bold mb-2">{plan.title}</h3>
                   <p className="text-gray-600 mb-4">{plan.subtitle}</p>
                   <div className="mb-4">
@@ -450,7 +438,7 @@ function App() {
                     <div className="text-sm text-gray-600">{plan.installments}</div>
                   </div>
                   <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                    <button className="w-full bg-pink-600 hover:bg-pink-700">
+                    <button className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-md">
                       Comprar Agora
                     </button>
                   </a>
@@ -462,114 +450,125 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-<section id="faq" className="py-16 bg-pink-50">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Perguntas <span className="text-pink-600">Frequentes</span>
-      </h2>
-      <p className="text-lg text-gray-600">
-        Tire todas suas dúvidas sobre o Rosa Oriental
-      </p>
-    </div>
-    
-    <div className="max-w-3xl mx-auto space-y-4">
-      {faqItems.map((item, index) => (
-        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-          <button
-            onClick={() => setOpenFaq(openFaq === index ? null : index)}
-            className="w-full p-6 text-left hover:bg-gray-50 transition-colors"
-          >
-            <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-lg">{item.question}</h3>
-              <div className={`transform transition-transform text-2xl font-light ${openFaq === index ? 'rotate-45' : ''}`}>
-                +
+      <section id="faq" className="py-16 bg-pink-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Perguntas <span className="text-pink-600">Frequentes</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Tire todas suas dúvidas sobre o Rosa Oriental
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full p-6 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="font-semibold text-lg">{item.question}</h3>
+                    <div className={`transform transition-transform text-2xl font-light ${openFaq === index ? 'rotate-45' : ''}`}>
+                      +
+                    </div>
+                  </div>
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-600 whitespace-pre-line">{item.answer}</p>
+                  </div>
+                )}
               </div>
-            </div>
-          </button>
-          {openFaq === index && (
-            <div className="px-6 pb-6">
-              <p className="text-gray-600 whitespace-pre-line">{item.answer}</p>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-     {/* CTA Section */}
-<section className="py-16 bg-pink-600 text-white">
-  <div className="container mx-auto px-4 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-      Pronta para Transformar sua Pele?
-    </h2>
-    <p className="text-xl mb-8">
-      Junte-se a mais de 50.000 mulheres que já descobriram o segredo para uma pele jovem e radiante com Rosa Oriental
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#kits">
-        <button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4 rounded-md flex items-center font-semibold">
-          <Heart className="w-5 h-5 mr-2" />
-          Escolher Meu Kit
-        </button>
-      </a>
-      <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-        <button size="lg" variant="outline" className="border-white border-2 text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-md flex items-center font-semibold">
-          <MessageCircle className="w-5 h-5 mr-2" />
-          Falar no WhatsApp
-        </button>
-      </a>
-    </div>
-  </div>
-</section>
+      {/* CTA Section */}
+      <section className="py-16 bg-pink-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Pronta para Transformar sua Pele?
+          </h2>
+          <p className="text-xl mb-8">
+            Junte-se a mais de 50.000 mulheres que já descobriram o segredo para uma pele jovem e radiante com Rosa Oriental
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#kits">
+              <button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4 rounded-md flex items-center font-semibold">
+                <Heart className="w-5 h-5 mr-2" />
+                Escolher Meu Kit
+              </button>
+            </a>
+            <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
+              <button size="lg" variant="outline" className="border-white border-2 text-white hover:bg-white hover:text-pink-600 px-8 py-4 rounded-md flex items-center font-semibold">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar no WhatsApp
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-<footer className="bg-gray-900 text-white py-12">
-  <div className="container mx-auto px-4">
-    <div className="grid md:grid-cols-3 gap-8">
-      <div>
-        <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto mb-4 filter brightness-0 invert" />
-        <p className="text-gray-400 mb-4">
-          Rejuvenesça sua pele de dentro para fora com a fórmula exclusiva Rosa Oriental.
-        </p>
-      </div>
-      
-      <div>
-        <h3 className="font-semibold mb-4">Links Rápidos</h3>
-        <div className="space-y-2">
-          <a href="#beneficios" className="block text-gray-400 hover:text-white transition-colors">Benefícios</a>
-          <a href="#composicao" className="block text-gray-400 hover:text-white transition-colors">Composição</a>
-          <a href="#depoimentos" className="block text-gray-400 hover:text-white transition-colors">Depoimentos</a>
-          <a href="#kits" className="block text-gray-400 hover:text-white transition-colors">Kits</a>
-          <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
-          <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
-            <Package className="w-4 h-4 mr-2" />
-            Rastrear Pedido
-          </a>
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto mb-4 filter brightness-0 invert" />
+              <p className="text-gray-400 mb-4">
+                Rejuvenesça sua pele de dentro para fora com a fórmula exclusiva Rosa Oriental.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Links Rápidos</h3>
+              <div className="space-y-2">
+                <a href="#beneficios" className="block text-gray-400 hover:text-white transition-colors">Benefícios</a>
+                <a href="#composicao" className="block text-gray-400 hover:text-white transition-colors">Composição</a>
+                <a href="#depoimentos" className="block text-gray-400 hover:text-white transition-colors">Depoimentos</a>
+                <a href="#kits" className="block text-gray-400 hover:text-white transition-colors">Kits</a>
+                <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
+                <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                  <Package className="w-4 h-4 mr-2" />
+                  Rastrear Pedido
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Contato</h3>
+              <div className="space-y-2 text-gray-400">
+                <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Rosa Oriental. Todos os direitos reservados.</p>
+            <p className="mt-2 text-sm">
+              Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de usar.
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <div>
-        <h3 className="font-semibold mb-4">Contato</h3>
-        <div className="space-y-2 text-gray-400">
-          <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            WhatsApp
-          </a>
-        </div>
-      </div>
+      </footer>
+
+      <style jsx>{`
+        @keyframes floating {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        .floating-animation {
+          animation: floating 3s ease-in-out infinite;
+        }
+      `}</style>
     </div>
-    
-    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-      <p>&copy; 2024 Rosa Oriental. Todos os direitos reservados.</p>
-      <p className="mt-2 text-sm">
-        Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte seu médico antes de usar.
-      </p>
-    </div>
-  </div>
-</footer>
-</div>
-)
+  );
 }
+
 export default App;
