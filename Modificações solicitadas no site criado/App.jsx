@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react'
 import './App.css'
-import produtoImg from './assets/rosa-oriental-produto.webp'
+import produtoImg from './image.png'
 import mariaSilvaImg from './assets/maria-silva.png'
 import carlaMendesImg from './assets/carla-mendes.png'
 import logoImg from './assets/RosaOriental-Logotipo.png'
