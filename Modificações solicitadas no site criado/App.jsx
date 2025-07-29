@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react'
 import './App.css'
-import produtoImg from './image.png'
-import mariaSilvaImg from './assets/maria-silva.png'
-import carlaMendesImg from './assets/carla-mendes.png'
-import logoImg from './assets/RosaOriental-Logotipo.png'
-import garantiaImg from './assets/garantia-produtos.png'
+import produtoImg from './image.png' // Nome corrigido
+import mariaSilvaImg from './maria-silva.png'
+import carlaMendesImg from './carla-mendes.png'
+import logoImg from './RosaOriental-Logotipo.png'
+import garantiaImg from './garantia-produtos.png'
 
 function App() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
