@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import { Button } from '@/components/ui/button.jsx'
-import { Card, CardContent } from '@/components/ui/card.jsx'
-import { Badge } from '@/components/ui/badge.jsx'
 import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react'
 import './App.css'
 import produtoImg from './assets/rosa-oriental-produto.webp'
@@ -184,16 +181,16 @@ function App() {
             </nav>
             <div className="flex space-x-3">
               <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-pink-600 hover:bg-pink-700">
+                <button className="bg-pink-600 hover:bg-pink-700">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp
-                </Button>
+                </button>
               </a>
               <a href="#kits">
-                <Button className="bg-green-600 hover:bg-green-700">
+                <button className="bg-green-600 hover:bg-green-700">
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   Comprar
-                </Button>
+                </button>
               </a>
             </div>
           </div>
@@ -209,10 +206,10 @@ function App() {
             </div>
           </div>
           <div>
-            <Badge className="mb-4 bg-pink-100 text-pink-600 border-pink-200">
+            <span className="mb-4 bg-pink-100 text-pink-600 border-pink-200">
               <Star className="w-4 h-4 mr-1" />
               Aprovado pela ANVISA
-            </Badge>
+            </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-pink-600">Rejuvenesça</span><br />
               <span className="text-gray-800">sua pele</span><br />
@@ -224,16 +221,16 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#kits">
-                <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4">
+                <button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4">
                   <Heart className="w-5 h-5 mr-2" />
                   Quero Rejuvenescer
-                </Button>
+                </button>
               </a>
               <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4">
+                <button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
                   Falar no WhatsApp
-                </Button>
+                </button>
               </a>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-600">
@@ -267,15 +264,15 @@ function App() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
+              <div key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+                <divContent className="pt-6">
                   <div className="flex justify-center mb-4">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                   <p className="text-gray-600">{benefit.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -346,8 +343,8 @@ function App() {
           </div>
           
           <div className="max-w-2xl mx-auto">
-            <Card className="p-8 text-center">
-              <CardContent>
+            <div className="p-8 text-center">
+              <divContent>
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
@@ -367,8 +364,8 @@ function App() {
                     <div className="text-gray-600">{testimonials[activeTestimonial].age} anos</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
             
             <div className="flex justify-center mt-6 space-x-2">
               {testimonials.map((_, index) => (
@@ -433,19 +430,19 @@ function App() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {plans.map((plan, index) => (
-              <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>
+              <div key={index} className={`relative ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>
                 {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white">
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white">
                     Mais Popular
-                  </Badge>
+                  </span>
                 )}
                 {plan.bestValue && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white">
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white">
                     Melhor Custo Benefício
-                  </Badge>
+                  </span>
                 )}
-                <CardContent className="p-6 text-center">
-                  <Badge className="mb-4 bg-green-100 text-green-600">{plan.discount}</Badge>
+                <divContent className="p-6 text-center">
+                  <span className="mb-4 bg-green-100 text-green-600">{plan.discount}</span>
                   <h3 className="text-xl font-bold mb-2">{plan.title}</h3>
                   <p className="text-gray-600 mb-4">{plan.subtitle}</p>
                   <div className="mb-4">
@@ -454,12 +451,12 @@ function App() {
                     <div className="text-sm text-gray-600">{plan.installments}</div>
                   </div>
                   <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full bg-pink-600 hover:bg-pink-700">
+                    <button className="w-full bg-pink-600 hover:bg-pink-700">
                       Comprar Agora
-                    </Button>
+                    </button>
                   </a>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -479,7 +476,7 @@ function App() {
           
           <div className="max-w-3xl mx-auto space-y-4">
             {faqItems.map((item, index) => (
-              <Card key={index} className="overflow-hidden">
+              <div key={index} className="overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full p-6 text-left hover:bg-gray-50 transition-colors"
@@ -496,7 +493,7 @@ function App() {
                     <p className="text-gray-600">{item.answer}</p>
                   </div>
                 )}
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -513,16 +510,16 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#kits">
-              <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4">
+              <button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4">
                 <Heart className="w-5 h-5 mr-2" />
                 Escolher Meu Kit
-              </Button>
+              </button>
             </a>
             <a href="https://wa.me/5514981262330" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4">
+              <button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600 px-8 py-4">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar no WhatsApp
-              </Button>
+              </button>
             </a>
           </div>
         </div>
