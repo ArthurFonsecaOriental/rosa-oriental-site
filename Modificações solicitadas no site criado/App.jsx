@@ -265,7 +265,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <divContent className="pt-6">
+                <div className="pt-6">
                   <div className="flex justify-center mb-4">
                     {benefit.icon}
                   </div>
@@ -344,7 +344,7 @@ function App() {
           
           <div className="max-w-2xl mx-auto">
             <div className="p-8 text-center">
-              <divContent>
+              <div>
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
@@ -441,7 +441,7 @@ function App() {
                     Melhor Custo Benefício
                   </span>
                 )}
-                <divContent className="p-6 text-center">
+                <div className="p-6 text-center">
                   <span className="mb-4 bg-green-100 text-green-600">{plan.discount}</span>
                   <h3 className="text-xl font-bold mb-2">{plan.title}</h3>
                   <p className="text-gray-600 mb-4">{plan.subtitle}</p>
