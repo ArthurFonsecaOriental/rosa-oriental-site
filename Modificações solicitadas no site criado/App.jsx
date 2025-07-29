@@ -429,7 +429,7 @@ function App() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {plans.map((plan, index) => (
-              <div key={index} className={`relative ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>
+              <div key={index} className={\relative bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>`
                 {plan.popular && (
                   <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white">
                     Mais Popular
