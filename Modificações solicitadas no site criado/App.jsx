@@ -142,7 +142,7 @@ function App() {
     },
     {
       question: "QUAIS SÃO OS BENEFÍCIOS DO ROSA ORIENTAL?",
-      answer: "* PELE MAIS FIRME E HIDRATADA: Os ingredientes como colágeno e ácido hialurônico ajudam a melhorar a elasticidade da pele.\n\n* REDUÇÃO DE SINAIS DE ENVELHECimento: Atua para minimizar linhas finas e rugas, deixando a pele mais jovem e revitalizada.\n\n* PELE MAIS ILUMINADA E UNIFORME: Os antioxidantes do chá verde e a vitamina B5 ajudam a combater o estresse oxidativo e a dar um brilho saudável à pele."
+      answer: "* PELE MAIS FIRME E HIDRATADA: Os ingredientes como colágeno e ácido hialurônico ajudam a melhorar a elasticidade da pele.\n\n* REDUÇÃO DE SINAIS DE ENVELHECIMENTO: Atua para minimizar linhas finas e rugas, deixando a pele mais jovem e revitalizada.\n\n* PELE MAIS ILUMINADA E UNIFORME: Os antioxidantes do chá verde e a vitamina B5 ajudam a combater o estresse oxidativo e a dar um brilho saudável à pele."
     },
     {
       question: "QUEM PODE USAR O ROSA ORIENTAL?",
@@ -158,7 +158,7 @@ function App() {
     },
     {
       question: "ROSA ORIENTAL É VENDIDO NA FARMÁCIA OU MERCADO LIVRE?",
-      answer: "Não, a venda é exclusivamente feita por nosso site oficial: www.rosaoriental.com.br Nós não nos responsabilizamos por sites que fraudam o Rosa Oriental. É um grande risco à sua saúde comprar em sites como Mercado Livre porque as cápsulas vendidas nele não passam pelo nosso controle de qualidade nem são aprovadas pela ANVISA."
+      answer: "Não, a venda é exclusivamente feita por nosso site oficial: https://rosaorientaloficial.netlify.app/ Nós não nos responsabilizamos por sites que fraudam o Rosa Oriental. É um grande risco à sua saúde comprar em sites como Mercado Livre porque as cápsulas vendidas nele não passam pelo nosso controle de qualidade nem são aprovadas pela ANVISA."
     },
     {
       question: "O SITE É SEGURO?",
@@ -166,7 +166,7 @@ function App() {
     },
     {
       question: "COMO RASTREAR O PEDIDO?",
-      answer: "Para acompanhar o seu envio clique aqui (coloque o número da sua transação que os dados serão impressos). Após a compra, o prazo para que seus dados estejam no sistema, é de até 72 horas. Caso não consiga depois desse período, entre em contato conosco."
+      answer: "Para acompanhar o seu envio clique em rastrear pedido ao final da página (coloque o número do código de rastreio que você recebeu). Após a compra, o prazo para que seus dados estejam no sistema, é de até 72 horas. Caso não consiga depois desse período, entre em contato conosco."
     }
   ];
 
