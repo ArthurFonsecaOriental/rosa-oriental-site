@@ -5,7 +5,7 @@ import produtoImg from './imagem-hero.png';
 import garantiaImg from './imagem-garantia.png';
 import logoImg from './RosaOriental-Logotipo.png';
 
-// Importação das imagens de depoimento
+// (As importações das imagens de depoimento e planos continuam as mesmas)
 import depoimento1Antes from './depoimento-1-antes.jpg';
 import depoimento1Depois from './depoimento-1-depois.jpg';
 import depoimento2Antes from './depoimento-2-antes.jpg';
@@ -16,8 +16,6 @@ import depoimento4Antes from './depoimento-4-antes.jpg';
 import depoimento4Depois from './depoimento-4-depois.jpg';
 import depoimento5Antes from './depoimento-5-antes.jpg';
 import depoimento5Depois from './depoimento-5-depois.jpg';
-
-// Importação das imagens dos planos (kits)
 import plano3meses from './plano-3-meses.png';
 import plano5meses from './plano-5-meses.png';
 import plano9meses from './plano-9-meses.png';
@@ -65,7 +63,6 @@ function App() {
     }
   ];
 
-  // Funções para controlar o carrossel de depoimentos com as setas
   const nextTestimonial = () => {
     setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
@@ -158,7 +155,12 @@ function App() {
     },
     {
       question: "ROSA ORIENTAL É VENDIDO NA FARMÁCIA OU MERCADO LIVRE?",
-      answer: "Não, a venda é exclusivamente feita por nosso site oficial: https://rosaorientaloficial.netlify.app/ Nós não nos responsabilizamos por sites que fraudam o Rosa Oriental. É um grande risco à sua saúde comprar em sites como Mercado Livre porque as cápsulas vendidas nele não passam pelo nosso controle de qualidade nem são aprovadas pela ANVISA."
+      // ALTERAÇÃO AQUI: A resposta agora é um componente JSX para permitir o link
+      answer: (
+        <span>
+          Não, a venda é exclusivamente feita por nosso site oficial: <a href="https://rosaorientaloficial.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 font-semibold hover:underline">https://rosaorientaloficial.netlify.app/</a> Nós não nos responsabilizamos por sites que fraudam o Rosa Oriental. É um grande risco à sua saúde comprar em sites como Mercado Livre porque as cápsulas vendidas nele não passam pelo nosso controle de qualidade nem são aprovadas pela ANVISA.
+        </span>
+      )
     },
     {
       question: "O SITE É SEGURO?",
@@ -166,7 +168,12 @@ function App() {
     },
     {
       question: "COMO RASTREAR O PEDIDO?",
-      answer: "Para acompanhar o seu envio clique em rastrear pedido ao final da página (coloque o número do código de rastreio que você recebeu). Após a compra, o prazo para que seus dados estejam no sistema, é de até 72 horas. Caso não consiga depois desse período, entre em contato conosco."
+      // ALTERAÇÃO AQUI: A resposta agora é um componente JSX para permitir o link
+      answer: (
+        <span>
+          Para acompanhar o seu envio clique em <a href="#footer-rastrear" className="text-pink-600 font-semibold hover:underline">rastrear pedido</a> ao final da página (coloque o número do código de rastreio que você recebeu). Após a compra, o prazo para que seus dados estejam no sistema, é de até 72 horas. Caso não consiga depois desse período, entre em contato conosco.
+        </span>
+      )
     }
   ];
 
@@ -178,9 +185,10 @@ function App() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            {/* ALTERAÇÃO AQUI: Logo agora é um link */}
+            <a href="#inicio" className="flex items-center">
               <img src={logoImg} alt="Rosa Oriental" className="h-12 w-auto" />
-            </div>
+            </a>
             <nav className="hidden md:flex space-x-6">
               <a href="#beneficios" className="text-gray-600 hover:text-pink-600 transition-colors">Benefícios</a>
               <a href="#composicao" className="text-gray-600 hover:text-pink-600 transition-colors">Composição</a>
@@ -207,7 +215,8 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 relative overflow-hidden">
+      <section id="inicio" className="container mx-auto px-4 py-12 relative overflow-hidden">
+        {/* Adicionado id="inicio" para o link do logo funcionar */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center relative">
             <div className="floating-animation">
@@ -335,7 +344,7 @@ function App() {
         </div>
       </section>
       
-      {/* Testimonials Section - ALTERADO */}
+      {/* Testimonials Section */}
       <section id="depoimentos" className="py-16 bg-pink-50">
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-12">
@@ -347,7 +356,6 @@ function App() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto relative">
-            {/* Botão de Voltar */}
             <button 
               onClick={prevTestimonial}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 md:-translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10"
@@ -391,8 +399,7 @@ function App() {
                 </div>
               </div>
             </div>
-
-            {/* Botão de Avançar */}
+            
             <button 
               onClick={nextTestimonial}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 md:translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10"
@@ -449,7 +456,7 @@ function App() {
         </div>
       </section>
 
-      {/* Plans Section - ALTERADO */}
+      {/* Plans Section */}
       <section id="kits" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -464,7 +471,8 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <a href={plan.link} key={index} className="block group">
-                <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-2 border-2 ${plan.popular ? 'border-green-500 scale-105' : 'border-pink-500'} relative`}>
+                {/* ALTERAÇÃO AQUI: Borda mais grossa para o plano popular */}
+                <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-2 border-2 ${plan.popular ? 'border-green-500 border-4' : 'border-pink-500'} relative`}>
                   {plan.popular && (
                     <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white font-bold px-4 py-1.5 rounded-full uppercase text-lg">Plano Mais Popular</span>
                   )}
@@ -556,7 +564,8 @@ function App() {
                 <a href="#depoimentos" className="block text-gray-400 hover:text-white transition-colors">Depoimentos</a>
                 <a href="#kits" className="block text-gray-400 hover:text-white transition-colors">Kits</a>
                 <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
-                <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                {/* ALTERAÇÃO AQUI: Adicionado id para o link do FAQ funcionar */}
+                <a id="footer-rastrear" href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-400 hover:text-white transition-colors">
                   <Package className="w-4 h-4 mr-2" />
                   Rastrear Pedido
                 </a>
