@@ -5,7 +5,7 @@ import produtoImg from './imagem-hero.png';
 import garantiaImg from './imagem-garantia.png';
 import logoImg from './RosaOriental-Logotipo.png';
 
-// Importação das 10 novas imagens de depoimento
+// Importação das imagens de depoimento
 import depoimento1Antes from './depoimento-1-antes.jpg';
 import depoimento1Depois from './depoimento-1-depois.jpg';
 import depoimento2Antes from './depoimento-2-antes.jpg';
@@ -17,10 +17,16 @@ import depoimento4Depois from './depoimento-4-depois.jpg';
 import depoimento5Antes from './depoimento-5-antes.jpg';
 import depoimento5Depois from './depoimento-5-depois.jpg';
 
+// Importação das novas imagens dos planos (kits)
+import plano3meses from './plano-3-meses.png';
+import plano5meses from './plano-5-meses.png';
+import plano9meses from './plano-9-meses.png';
+import plano12meses from './plano-12-meses.png';
+
+
 function App() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-  // Nova estrutura de depoimentos com as duas imagens
   const testimonials = [
     {
       name: "Carla Mendes",
@@ -92,60 +98,26 @@ function App() {
     }
   ];
 
+  // Estrutura de dados para os 4 planos
   const plans = [
     {
-      title: "Tratamento 1 mês",
-      subtitle: "Ideal para experimentar",
-      originalPrice: "R$ 297,00",
-      price: "R$ 207,00",
-      installments: "à vista",
-      discount: "30% OFF",
+      image: plano3meses,
       popular: false,
-      bestValue: false,
-      link: "https://seguro.payt.com.br/a/M2o5lG5yC8KQyv4G"
-    },
-    {
-      title: "Tratamento 3 meses", 
-      subtitle: "Resultados visíveis",
-      originalPrice: "R$ 597,00",
-      price: "R$ 297,00",
-      installments: "à vista",
-      discount: "50% OFF",
-      popular: false,
-      bestValue: false,
       link: "https://seguro.payt.com.br/a/g0ey0pO6tP6GgoYn"
     },
     {
-      title: "Tratamento 5 meses",
-      subtitle: "Transformação completa", 
-      originalPrice: "R$ 997,00",
-      price: "R$ 397,00",
-      installments: "à vista",
-      discount: "60% OFF",
+      image: plano5meses,
       popular: true,
-      bestValue: false,
       link: "https://seguro.payt.com.br/a/qGW918m1UpZG7WRk"
     },
     {
-      title: "Tratamento 9 meses",
-      subtitle: "Rejuvenescimento profundo",
-      originalPrice: "R$ 1.797,00", 
-      price: "R$ 697,00",
-      installments: "à vista",
-      discount: "61% OFF",
+      image: plano9meses,
       popular: false,
-      bestValue: false,
       link: "https://seguro.payt.com.br/a/Pko6pXzKFnrP1Wn0"
     },
     {
-      title: "Tratamento 12 meses",
-      subtitle: "Máximos resultados",
-      originalPrice: "R$ 2.397,00",
-      price: "R$ 797,00", 
-      installments: "à vista",
-      discount: "67% OFF",
+      image: plano12meses,
       popular: false,
-      bestValue: true,
       link: "https://seguro.payt.com.br/a/nVoQbDkVIZOp4ebq"
     }
   ];
@@ -452,47 +424,56 @@ function App() {
         </div>
       </section>
 
-      {/* Plans Section */}
+      {/* Plans Section - TOTALMENTE REESCRITA */}
       <section id="kits" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Escolha seu <span className="text-pink-600">Tratamento</span>
+              Escolha o melhor <span className="text-pink-600">pacote</span> para você
             </h2>
             <p className="text-lg text-gray-600">
-              Kits especiais com descontos exclusivos para você começar sua transformação hoje mesmo
+              Aproveite nossas ofertas e comece sua transformação hoje!
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {plans.map((plan, index) => (
-              <div key={index} className={`relative bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow ${plan.popular ? 'ring-2 ring-pink-500 scale-105' : ''}`}>
-                {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
-                    Mais Popular
-                  </span>
-                )}
-                {plan.bestValue && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
-                    Melhor Custo Benefício
-                  </span>
-                )}
-                <div className="pt-6">
-                  <span className="mb-4 inline-block bg-green-100 text-green-600 text-sm font-semibold px-2.5 py-0.5 rounded-full">{plan.discount}</span>
-                  <h3 className="text-xl font-bold mb-2">{plan.title}</h3>
-                  <p className="text-gray-600 mb-4">{plan.subtitle}</p>
-                  <div className="mb-4">
-                    <div className="text-sm text-gray-500 line-through">{plan.originalPrice}</div>
-                    <div className="text-3xl font-bold text-pink-600">{plan.price}</div>
-                    <div className="text-sm text-gray-600">{plan.installments}</div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            {/* Coluna da Esquerda com 2 Planos */}
+            <div className="flex flex-col gap-8">
+              {/* Plano 3 Meses */}
+              <a href={plans[0].link} className="block group">
+                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
+                  <img src={plans[0].image} alt="Plano de 3 meses" className="w-full rounded-t-lg" />
+                  <div className="p-4 flex flex-col flex-grow">
+                    {/* Conteúdo do card, se necessário, ou pode ser vazio já que a imagem é completa */}
                   </div>
-                  <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                    <button className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-md">
-                      Comprar Agora
-                    </button>
-                  </a>
                 </div>
-              </div>
-            ))}
+              </a>
+              {/* Plano 9 Meses */}
+              <a href={plans[2].link} className="block group">
+                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
+                  <img src={plans[2].image} alt="Plano de 9 meses" className="w-full rounded-t-lg" />
+                </div>
+              </a>
+            </div>
+
+            {/* Coluna da Direita com 2 Planos */}
+            <div className="flex flex-col gap-8">
+              {/* Plano 5 Meses - DESTAQUE */}
+              <a href={plans[1].link} className="block group">
+                <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow p-4 border-2 border-pink-500 relative flex flex-col h-full">
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-600 text-white font-bold px-4 py-1 rounded-full uppercase text-sm">Mais Popular</span>
+                  <img src={plans[1].image} alt="Plano de 5 meses" className="w-full rounded-t-lg" />
+                </div>
+              </a>
+              {/* Plano 12 Meses */}
+              <a href={plans[3].link} className="block group">
+                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
+                  <img src={plans[3].image} alt="Plano de 12 meses" className="w-full rounded-t-lg" />
+                </div>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
