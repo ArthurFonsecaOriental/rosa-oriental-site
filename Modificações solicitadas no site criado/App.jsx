@@ -468,7 +468,7 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <a href={plan.link} key={index} className="block group">
                 {/* ALTERAÇÃO AQUI: Borda mais grossa para o plano popular */}
