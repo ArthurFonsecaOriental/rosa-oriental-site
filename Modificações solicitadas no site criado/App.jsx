@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package } from 'lucide-react';
+import { Heart, Star, Shield, Clock, Users, CheckCircle, Phone, MessageCircle, ShoppingCart, Package, ChevronLeft, ChevronRight } from 'lucide-react';
 import './App.css';
 import produtoImg from './imagem-hero.png';
 import garantiaImg from './imagem-garantia.png';
@@ -17,7 +17,7 @@ import depoimento4Depois from './depoimento-4-depois.jpg';
 import depoimento5Antes from './depoimento-5-antes.jpg';
 import depoimento5Depois from './depoimento-5-depois.jpg';
 
-// Importação das novas imagens dos planos (kits)
+// Importação das imagens dos planos (kits)
 import plano3meses from './plano-3-meses.png';
 import plano5meses from './plano-5-meses.png';
 import plano9meses from './plano-9-meses.png';
@@ -65,6 +65,16 @@ function App() {
     }
   ];
 
+  // Funções para controlar o carrossel de depoimentos com as setas
+  const nextTestimonial = () => {
+    setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevTestimonial = () => {
+    setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+
   const benefits = [
     {
       icon: <Heart className="w-8 h-8 text-pink-600" />,
@@ -98,7 +108,6 @@ function App() {
     }
   ];
 
-  // Estrutura de dados para os 4 planos
   const plans = [
     {
       image: plano3meses,
@@ -133,7 +142,7 @@ function App() {
     },
     {
       question: "QUAIS SÃO OS BENEFÍCIOS DO ROSA ORIENTAL?",
-      answer: "* PELE MAIS FIRME E HIDRATADA: Os ingredientes como colágeno e ácido hialurônico ajudam a melhorar a elasticidade da pele.\n\n* REDUÇÃO DE SINAIS DE ENVELHECIMENTO: Atua para minimizar linhas finas e rugas, deixando a pele mais jovem e revitalizada.\n\n* PELE MAIS ILUMINADA E UNIFORME: Os antioxidantes do chá verde e a vitamina B5 ajudam a combater o estresse oxidativo e a dar um brilho saudável à pele."
+      answer: "* PELE MAIS FIRME E HIDRATADA: Os ingredientes como colágeno e ácido hialurônico ajudam a melhorar a elasticidade da pele.\n\n* REDUÇÃO DE SINAIS DE ENVELHECimento: Atua para minimizar linhas finas e rugas, deixando a pele mais jovem e revitalizada.\n\n* PELE MAIS ILUMINADA E UNIFORME: Os antioxidantes do chá verde e a vitamina B5 ajudam a combater o estresse oxidativo e a dar um brilho saudável à pele."
     },
     {
       question: "QUEM PODE USAR O ROSA ORIENTAL?",
@@ -325,10 +334,10 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
+      
+      {/* Testimonials Section - ALTERADO */}
       <section id="depoimentos" className="py-16 bg-pink-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               O que nossas <span className="text-pink-600">clientes dizem</span>
@@ -337,7 +346,15 @@ function App() {
               Mais de 50.000 mulheres já transformaram sua pele com Rosa Oriental
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto relative">
+            {/* Botão de Voltar */}
+            <button 
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 md:-translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10"
+            >
+              <ChevronLeft className="w-6 h-6 text-pink-600" />
+            </button>
+            
             <div className="bg-white rounded-lg p-8 text-center shadow-md">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -374,6 +391,14 @@ function App() {
                 </div>
               </div>
             </div>
+
+            {/* Botão de Avançar */}
+            <button 
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 md:translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10"
+            >
+              <ChevronRight className="w-6 h-6 text-pink-600" />
+            </button>
             
             <div className="flex justify-center mt-6 space-x-2">
               {testimonials.map((_, index) => (
@@ -424,7 +449,7 @@ function App() {
         </div>
       </section>
 
-      {/* Plans Section - TOTALMENTE REESCRITA */}
+      {/* Plans Section - ALTERADO */}
       <section id="kits" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -436,44 +461,17 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            
-            {/* Coluna da Esquerda com 2 Planos */}
-            <div className="flex flex-col gap-8">
-              {/* Plano 3 Meses */}
-              <a href={plans[0].link} className="block group">
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
-                  <img src={plans[0].image} alt="Plano de 3 meses" className="w-full rounded-t-lg" />
-                  <div className="p-4 flex flex-col flex-grow">
-                    {/* Conteúdo do card, se necessário, ou pode ser vazio já que a imagem é completa */}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {plans.map((plan, index) => (
+              <a href={plan.link} key={index} className="block group">
+                <div className={`bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-2 border-2 ${plan.popular ? 'border-green-500 scale-105' : 'border-pink-500'} relative`}>
+                  {plan.popular && (
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white font-bold px-4 py-1.5 rounded-full uppercase text-lg">Plano Mais Popular</span>
+                  )}
+                  <img src={plan.image} alt={`Plano de tratamento ${index + 1}`} className="w-full rounded-md" />
                 </div>
               </a>
-              {/* Plano 9 Meses */}
-              <a href={plans[2].link} className="block group">
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
-                  <img src={plans[2].image} alt="Plano de 9 meses" className="w-full rounded-t-lg" />
-                </div>
-              </a>
-            </div>
-
-            {/* Coluna da Direita com 2 Planos */}
-            <div className="flex flex-col gap-8">
-              {/* Plano 5 Meses - DESTAQUE */}
-              <a href={plans[1].link} className="block group">
-                <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow p-4 border-2 border-pink-500 relative flex flex-col h-full">
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-600 text-white font-bold px-4 py-1 rounded-full uppercase text-sm">Mais Popular</span>
-                  <img src={plans[1].image} alt="Plano de 5 meses" className="w-full rounded-t-lg" />
-                </div>
-              </a>
-              {/* Plano 12 Meses */}
-              <a href={plans[3].link} className="block group">
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-4 border flex flex-col h-full">
-                  <img src={plans[3].image} alt="Plano de 12 meses" className="w-full rounded-t-lg" />
-                </div>
-              </a>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
